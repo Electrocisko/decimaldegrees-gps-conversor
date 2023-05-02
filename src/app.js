@@ -1,4 +1,4 @@
-import gpsCoordinates from "./src/gpsCoordinates.js";
+import gpsCoordinates from "../src/gpsCoordinates.js";
 import  express  from "express";
 
 const PORT=8080;
