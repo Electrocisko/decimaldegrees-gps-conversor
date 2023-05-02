@@ -1,8 +1,9 @@
-import gpsCoordinates from "../src/gpsCoordinates.js";
-import  express  from "express";
-import gpsRouter from './routes/gpsRouter.js'
 
-const PORT=8080;
+import  express  from "express";
+import gpsRouter from './routes/gpsRouter.js';
+import dotenvConfig from './config/config.js';
+
+const PORT=dotenvConfig.PORT;
 const app = express();
 
 app.use(express.json());

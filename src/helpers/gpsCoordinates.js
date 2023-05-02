@@ -4,18 +4,18 @@ const gpsCoordinates = (lat, long) => {
 
   if (lat > 0) {
     latitud = converterDegrees(lat);
-    latitud.point = "N";
+    latitud.hemisphere = "N";
   } else {
     latitud = converterDegrees(lat * -1);
-    latitud.point = "S";
+    latitud.hemisphere = "S";
   }
 
   if (long > 0) {
     longitud = converterDegrees(long);
-    longitud.point = "E";
+    longitud.hemisphere = "E";
   } else {
     longitud = converterDegrees(long * -1);
-    longitud.point = "W";
+    longitud.hemisphere = "W";
   }
 
   const result = {latitud, longitud}
