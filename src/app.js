@@ -1,5 +1,6 @@
 import gpsCoordinates from "../src/gpsCoordinates.js";
 import  express  from "express";
+import gpsRouter from './routes/gpsRouter.js'
 
 const PORT=8080;
 const app = express();
@@ -12,18 +13,9 @@ const server = app.listen(PORT, () => {
 })
 
 app.get('/', (req,res) => {
-    res.send('<h1>Servidor levantado</h1>')
+    res.send('<h1>Conversor GPS DD a GRADOS</h1>')
 })
 
-app.get('/api/conversor/:dd', (req,res) => {
-    const decimalCoordinades = req.params.dd;
-  
-    let splitter = decimalCoordinades.split(',')
-    let lat = parseFloat(splitter[0])
-    let long = parseFloat(splitter[1])
-    const result = gpsCoordinates(lat,long);
-
-    res.status(200).json(result)
-})
+app.use('/api',gpsRouter)
 
 server.on('error', error => console.log(error))
