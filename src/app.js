@@ -2,12 +2,14 @@
 import  express  from "express";
 import gpsRouter from './routes/gpsRouter.js';
 import dotenvConfig from './config/config.js';
+import cors from 'cors';
 
 const PORT=dotenvConfig.PORT;
 const app = express();
 
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
+app.use(cors()); //Autoriza a todos
 
 const server = app.listen(PORT, () => {
     console.log(`http://localhost:${PORT}`)
