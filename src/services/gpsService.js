@@ -1,5 +1,6 @@
 import gpsCoordinates from "../helpers/gpsCoordinates.js";
 
+
 const gpsService = (dd) => {
 
     let cantComas = dd.split(",").length;
