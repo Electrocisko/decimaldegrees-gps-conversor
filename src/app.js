@@ -7,8 +7,6 @@ import cors from 'cors';
 import pkg from 'pluscodes';
 const {encode} = pkg;
 
-console.log(encode({ latitude: 59.332438, longitude: 18.118813 }))
-
 const PORT=dotenvConfig.PORT;
 const app = express();
 
